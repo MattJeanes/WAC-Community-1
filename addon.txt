@@ -1,0 +1,11 @@
+"AddonInfo"
+{
+	"name"		"WAC Community 1"
+	"version"	"1.0"
+	"up_date"	"28/10/12"
+	"author_name"	"Dr. Matt & Others"
+	"author_email"	"mattjeanes23@gmail.com"
+	"author_url"	"mattjeanes.com"
+	
+	"info"		"Extra aircraft for WAC"
+}
