@@ -1,4 +1,4 @@
-
+	
 ENT.Base 				= "wac_hc_base"
 ENT.Type 				= "anim"
 

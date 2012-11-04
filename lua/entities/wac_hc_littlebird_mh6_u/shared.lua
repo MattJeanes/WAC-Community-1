@@ -2,7 +2,7 @@
 ENT.Base = "wac_hc_base_u"
 ENT.Type = "anim"
 ENT.Author = wac.author
-ENT.Category = wac.aircraft.categoryU
+ENT.Category = wac.aircraft.spawnCategoryU
 ENT.Spawnable = true
 ENT.AdminSpawnable = true
 
@@ -18,7 +18,6 @@ ENT.TopRotorPos	= Vector(-10,0,100)
 ENT.BackRotorPos	= Vector(-217,9,73)
 ENT.EngineForce	= 30
 ENT.Weight		= 1010
-ENT.ThirdPDist = 400
 ENT.SmokePos	= Vector(-80,0,50)
 ENT.FirePos		= Vector(-30,0,100)
 

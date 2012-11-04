@@ -5,7 +5,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "CH-46 Sea Knight"
 ENT.Author				= "}{ornet/Vest"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""
@@ -24,7 +24,11 @@ ENT.EngineForce	= 36
 ENT.Weight		= 11000
 ENT.SmokePos		= Vector(-230,0,115)
 ENT.FirePos		= Vector(-263,0,203)
-ENT.ThirdPDist = 680
+if CLIENT then
+	ENT.thirdPerson = {
+		distance = 680
+	}
+end
 ENT.TwinBladed = true
 
 function ENT:AddSeatTable()

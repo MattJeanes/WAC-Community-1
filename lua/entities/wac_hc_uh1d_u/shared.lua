@@ -3,7 +3,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "UH-1D Huey"
 ENT.Author				= "SentryGunMan"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""
@@ -23,7 +23,6 @@ ENT.Weight		= 9200
 
 ENT.SmokePos	= Vector(-85,0,102)
 ENT.FirePos		= Vector(-85,0,102)
-ENT.ThirdPDist		= 500
 
 function ENT:AddSeatTable()
 	return{

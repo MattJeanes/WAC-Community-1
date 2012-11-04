@@ -19,7 +19,6 @@ ENT.AdminSpawnable	= true
 
 ENT.SmokePos		= Vector(10,0,175)
 ENT.FirePos		= Vector(10,0,180)
-ENT.ThirdPDist		= 1000
 
 function ENT:AddSeatTable()
 	return {

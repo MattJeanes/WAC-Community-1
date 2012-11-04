@@ -4,7 +4,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "Bell 206B"
 ENT.Author				= "Dr. Matt"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Spawnable			= true
 ENT.AdminSpawnable		= true
 
@@ -22,7 +22,12 @@ ENT.SeatSwitcherPos	= Vector(0,0,0)
 ENT.AngBrakeMul	= 0.012
 ENT.SmokePos        = Vector(-84,0,110)
 ENT.FirePos            = Vector(-86,0,110)
-ENT.ThirdPDist = 400
+
+if CLIENT then
+	ENT.thirdPerson = {
+		distance = 400
+	}
+end
 
 function ENT:AddSeatTable()
     return{

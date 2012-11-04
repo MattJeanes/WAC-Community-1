@@ -24,7 +24,13 @@ ENT.EngineForce	= 36
 ENT.Weight		= 11000
 ENT.SmokePos		= Vector(-230,0,115)
 ENT.FirePos		= Vector(-263,0,203)
-ENT.ThirdPDist = 680
+
+if CLIENT then
+	ENT.thirdPerson = {
+		distance = 680
+	}
+end
+
 ENT.TwinBladed = true
 
 function ENT:AddSeatTable()

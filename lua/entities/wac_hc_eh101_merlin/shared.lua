@@ -24,7 +24,6 @@ ENT.Weight		= 36000
 
 ENT.SmokePos	= Vector(0,0,200)
 ENT.FirePos		= Vector(0,0,200)
-ENT.ThirdPDist		= 1000
 
 function ENT:AddSeatTable()
 	return{

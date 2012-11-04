@@ -21,7 +21,6 @@ ENT.EngineForce	= 80
 ENT.Weight		= 761
 ENT.SmokePos		= Vector(47, 0, 0)
 ENT.FirePos		= Vector(47, 0, 0)
-ENT.ThirdPDist = 400
 ENT.EngineWeight = {
 	Weight = 117,
 	Position = ENT.TopRotorPos

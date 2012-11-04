@@ -10,6 +10,7 @@ function ENT:SpawnFunction(ply, tr)
 	ent.Owner=ply
 	ent:Spawn()
 	ent:Activate()
+	ent:SetSkin(math.random(0,2))
 	self.Sounds=table.Copy(sndt)
 	return ent
 end

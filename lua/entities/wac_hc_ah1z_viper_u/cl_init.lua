@@ -1,4 +1,3 @@
-
 include("shared.lua")
 
 local function DrawLine(v1,v2)

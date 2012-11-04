@@ -3,7 +3,7 @@ ENT.Base 				= "wac_hc_base_u"
 ENT.Type 				= "anim"
 ENT.PrintName			= "Boeing AH-64D Longbow"
 ENT.Author				= "WeltEnSTurm,Sentry,Apache Air Assault"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""
@@ -22,7 +22,6 @@ ENT.BackRotorDir	= -1
 ENT.BackRotorPos	= Vector(-345,10,87)
 ENT.SmokePos		= Vector(0,0,0)
 ENT.FirePos		= Vector(-80,-30,40)
-ENT.ThirdPDist		= 500
 
 function ENT:AddSeatTable()
 	return{

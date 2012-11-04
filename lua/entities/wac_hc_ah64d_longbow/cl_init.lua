@@ -1,6 +1,10 @@
 
 include("shared.lua")
 
+ENT.thirdPerson = {
+	distance = 500
+}
+
 local function DrawLine(v1,v2)
 	surface.DrawLine(v1.y,v1.z,v2.y,v2.z)
 end

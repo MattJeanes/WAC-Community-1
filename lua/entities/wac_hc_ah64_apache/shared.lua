@@ -22,7 +22,6 @@ ENT.BackRotorDir	= -1
 ENT.BackRotorPos	= Vector(-345,10,87)
 ENT.SmokePos		= Vector(0,0,0)
 ENT.FirePos		= Vector(-80,-30,40)
-ENT.ThirdPDist		= 500
 
 function ENT:AddSeatTable()
 	return{

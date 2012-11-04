@@ -4,7 +4,7 @@ ENT.Type 			= "anim"
 
 ENT.PrintName		= "Mil Mi-35"
 ENT.Author			= "SentryGunMan,Nirrti"
-ENT.Category		= wac.aircraft.categoryU
+ENT.Category		= wac.aircraft.spawnCategoryU
 ENT.Contact    		= ""
 ENT.Purpose 		= ""
 ENT.Instructions 	= ""
@@ -22,7 +22,6 @@ ENT.BackRotorPos	= Vector(-415.5,25,174.5)
 ENT.BackRotorDir	= -1
 ENT.SmokePos		= Vector(-7.5,0,155)
 ENT.FirePos			= Vector(-7.5,0,155)
-ENT.ThirdPDist		= 700
 
 function ENT:AddSeatTable()
 		return{

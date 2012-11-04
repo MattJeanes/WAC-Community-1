@@ -26,7 +26,11 @@ ENT.Weight		= 50000
 ENT.AngBrakeMul	= 0.013
 ENT.SmokePos		= Vector(-178,0,189)
 ENT.FirePos		= Vector(-178,0,189)
-ENT.ThirdPDist = 700
+if CLIENT then
+	ENT.thirdPerson = {
+		distance = 700
+	}
+end
 ENT.WheelInfo={
 	{
 		mdl="models/BF2/helicopters/Mil Mi-28/mi28_w1.mdl",

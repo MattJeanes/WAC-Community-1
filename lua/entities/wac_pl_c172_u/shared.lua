@@ -2,7 +2,7 @@
 ENT.Base = "wac_pl_base_u"
 ENT.Type = "anim"
 ENT.Author = wac.author
-ENT.Category = wac.aircraft.categoryU
+ENT.Category = wac.aircraft.spawnCategoryU
 ENT.Spawnable = true
 ENT.AdminSpawnable = true
 

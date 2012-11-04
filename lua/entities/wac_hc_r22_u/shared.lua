@@ -4,7 +4,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "Robinson R22"
 ENT.Author				= "Matt J"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""

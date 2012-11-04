@@ -1,6 +1,10 @@
 
 include("shared.lua")
 
+ENT.thirdPerson = {
+	distance = 700
+}
+
 function ENT:DrawWeaponSelection() end
 
 local function DrawLine(v1,v2)

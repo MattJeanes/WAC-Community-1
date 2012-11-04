@@ -3,7 +3,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "Bell UH-1 Iroquois"
 ENT.Author				= "WeltEnSTurm,Sentry,FSX"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""

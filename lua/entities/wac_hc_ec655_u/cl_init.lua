@@ -1,5 +1,8 @@
-
 include("shared.lua")
+
+ENT.thirdPerson = {
+	distance = 700
+}
 
 function ENT:DrawWeaponSelection() end
 

@@ -14,6 +14,7 @@ function ENT:SpawnFunction(ply, tr)
 	return ent
 end
 
+/*
 ENT.Aerodynamics = {
 	Rotation = {
 		Front = Vector(0, -1, 0),
@@ -27,3 +28,4 @@ ENT.Aerodynamics = {
 	},
 	Rail = Vector(1, 4, 30)
 }
+*/

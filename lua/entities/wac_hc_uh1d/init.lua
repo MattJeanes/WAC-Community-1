@@ -8,7 +8,8 @@ function ENT:SpawnFunction(ply, tr)
 	ent:SetPos(tr.HitPos+Vector(0,0,5))
 	ent:Spawn()
 	ent:Activate()
-	ent.Owner=ply	
+	ent.Owner=ply
+	ent:SetSkin(math.random(0,3))
 	self.Sounds=table.Copy(sndt)
 	return ent
 end

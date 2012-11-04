@@ -3,7 +3,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "EH-101 Merlin"
 ENT.Author				= "WeltEnSTurm,Sentry,PR"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""
@@ -24,7 +24,6 @@ ENT.Weight		= 36000
 
 ENT.SmokePos	= Vector(0,0,200)
 ENT.FirePos		= Vector(0,0,200)
-ENT.ThirdPDist		= 1000
 
 function ENT:AddSeatTable()
 	return{

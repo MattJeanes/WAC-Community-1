@@ -4,7 +4,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "Hughes 500D"
 ENT.Author				= "}{ornet/Vest"
-ENT.Category			= wac.aircraft.categoryU
+ENT.Category			= wac.aircraft.spawnCategoryU
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""
