@@ -51,21 +51,21 @@ function ENT:AddSeatTable()
         [4]={
             Pos=Vector(0, 28, 49),
             ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,90,0),
+            Ang=Angle(0,-90,0),
             NoHud=true,
             wep={WAC.Helicopter.GetWeapon("No Weapon")},
         },
         [5]={
             Pos=Vector(105, 28, 49),
             ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,90,0),
+            Ang=Angle(0,-90,0),
             NoHud=true,
             wep={WAC.Helicopter.GetWeapon("No Weapon")},
         },
         [6]={
             Pos=Vector(65, -28, 49),
             ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,-90,0),
+            Ang=Angle(0,90,0),
             NoHud=true,
             wep={WAC.Helicopter.GetWeapon("No Weapon")},
         },
@@ -79,7 +79,7 @@ function ENT:AddSeatTable()
         [8]={
             Pos=Vector(-80, -28, 49),
             ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,-90,0),
+            Ang=Angle(0,90,0),
             NoHud=true,
             wep={WAC.Helicopter.GetWeapon("No Weapon")},
         },

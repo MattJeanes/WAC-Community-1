@@ -42,7 +42,7 @@ ENT.WheelInfo={
 }
 function ENT:SpawnFunction(ply, tr)
 	if (!tr.Hit) then return end
-	local ent=ents.Create("wac_hc_mv22")
+	local ent=ents.Create(ClassName)
 	ent:SetPos(tr.HitPos+tr.HitNormal*10)
 	ent:Spawn()
 	ent:Activate()
