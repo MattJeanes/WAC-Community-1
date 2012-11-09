@@ -32,7 +32,7 @@ function ENT:AddSeatTable()
 			Pos=Vector(12, -9, 32),
 			ExitPos=Vector(38,-60,10),
 			NoHud=true,
-			wep={[1]=WAC.Helicopter.GetWeapon("M134",{
+			wep={[1]=wac.aircraft.getWeapon("M134",{
 		Name="M296",
 		Ammo=500,
 		MaxAmmo=500,
@@ -101,7 +101,7 @@ function ENT:AddSeatTable()
 			t.StopSounds(self,t,p)
 		end
 			}),
-				[2]=WAC.Helicopter.GetWeapon("Hydra 70",{
+				[2]=wac.aircraft.getWeapon("Hydra 70",{
 					Ammo=7,
 					MaxAmmo=7,
 					ShootPos={
@@ -117,8 +117,8 @@ function ENT:AddSeatTable()
 			NoHud=true,
 			wep={
 				
-				[1]=WAC.Helicopter.GetWeapon("No Weapon"),
-				[2]=WAC.Helicopter.GetWeapon("Hellfire",{
+				[1]=wac.aircraft.getWeapon("No Weapon"),
+				[2]=wac.aircraft.getWeapon("Hellfire",{
 			Name="CCD Camera",
 			Ammo=0,
 			MaxAmmo=0,

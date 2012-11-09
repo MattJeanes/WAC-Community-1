@@ -31,27 +31,27 @@ function ENT:AddSeatTable()
 			Pos=Vector(220, 27, 85),
 			ExitPos=Vector(220,200,85),
 			NoHud=true,
-			wep={WAC.Helicopter.GetWeapon("No Weapon")},
+			wep={wac.aircraft.getWeapon("No Weapon")},
 		},
 		[2]={
 			Pos=Vector(220, -27, 85),
 			ExitPos=Vector(220,-200,85),
 			NoHud=true,
-			wep={WAC.Helicopter.GetWeapon("No Weapon")},
+			wep={wac.aircraft.getWeapon("No Weapon")},
 		},
 		[3]={
 			Pos=Vector(-80, 35, 75),
 			ExitPos=Vector(130,120,0),
 			Ang=Angle(0,-90,0),
 			NoHud=true,
-			wep={WAC.Helicopter.GetWeapon("No Weapon")},
+			wep={wac.aircraft.getWeapon("No Weapon")},
 		},
 		[4]={
 			Pos=Vector(-80, -40, 75),
 			ExitPos=Vector(0,-140,0),
 			Ang=Angle(0,90,0),
 			NoHud=true,
-			wep={WAC.Helicopter.GetWeapon("No Weapon")},
+			wep={wac.aircraft.getWeapon("No Weapon")},
 		},
 	}
 end

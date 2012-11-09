@@ -27,7 +27,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(250,-100,20),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[2]={
@@ -35,7 +35,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(250,100,20),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[3]={
@@ -44,7 +44,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(81.58,0,30),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[4]={
@@ -53,7 +53,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(81.58,0,30),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[5]={
@@ -62,7 +62,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(43.72,0,30),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[6]={
@@ -71,7 +71,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(-60.01,0,30),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[7]={
@@ -80,7 +80,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(-60.01,0,30),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[8]={
@@ -89,7 +89,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(-160.01,0,30),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 		[9]={
@@ -98,7 +98,7 @@ function ENT:AddSeatTable()
 			ExitPos=Vector(-340,0,20),
 			NoHud=true,
 			wep={
-				WAC.Helicopter.GetWeapon("No Weapon"),
+				wac.aircraft.getWeapon("No Weapon"),
 			},
 		},
 	}
