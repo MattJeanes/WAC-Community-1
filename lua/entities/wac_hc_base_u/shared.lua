@@ -1,3 +1,4 @@
+if not wac then return end
 AddCSLuaFile('shared.lua')
 
 ENT.Base	= "wac_hc_base"

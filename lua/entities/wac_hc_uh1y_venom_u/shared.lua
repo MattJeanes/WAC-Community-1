@@ -1,3 +1,4 @@
+if not wac then return end
 
 ENT.Base 			= "wac_hc_base_u"
 ENT.Type 			= "anim"

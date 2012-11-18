@@ -1,3 +1,4 @@
+if not wac then return end
 if SERVER then AddCSLuaFile('shared.lua') end
 ENT.Base 				= "wac_hc_base"
 ENT.Type 				= "anim"

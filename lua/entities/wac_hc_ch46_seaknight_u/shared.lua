@@ -1,3 +1,4 @@
+if not wac then return end
 AddCSLuaFile()
 
 ENT.Base 				= "wac_hc_base_u"

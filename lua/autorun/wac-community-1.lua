@@ -1,6 +1,26 @@
 if SERVER then AddCSLuaFile() end
-include("wac/aircraft.lua")
-assert(wac, "WAC has not been installed.")
+
+local f=file.Find('wac/*.lua', "LUA")
+local found=false
+for k,v in pairs(f) do
+	if v=="aircraft.lua" then
+		include('wac/aircraft.lua')
+		found=true
+	end
+end
+
+timer.Simple(2,function()
+	if not found and CLIENT then
+		LocalPlayer():ChatPrint("WAC Aircraft is not installed, opening steam browser..")
+		timer.Simple(3,function()
+			gui.OpenURL('http://steamcommunity.com/sharedfiles/filedetails/?id=104990330')
+		end)
+	elseif not found and SERVER then
+		print("WAC is not installed!")
+	end
+end)
+
+if not found then return end
 
 wac.aircraft.spawnCategoryU = "WAC Unbreakable"
 
