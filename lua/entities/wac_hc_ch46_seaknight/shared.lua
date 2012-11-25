@@ -95,7 +95,7 @@ end
 
 function ENT:AddSounds()
 	self.Sound={
-		Start=CreateSound(self.Entity,"WAC/Heli/merlin_start_idle_stop.wav"),
+		Start=CreateSound(self.Entity,"WAC/ch46/start.wav"),
 		Blades=CreateSound(self.Entity,"CH46.External"),
 		Engine=CreateSound(self.Entity,"CH46.Internal"),
 		MissileAlert=CreateSound(self.Entity,"HelicopterVehicle/MissileNearby.mp3"),

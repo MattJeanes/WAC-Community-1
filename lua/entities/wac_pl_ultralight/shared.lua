@@ -67,9 +67,9 @@ end
 
 function ENT:AddSounds()
 	self.Sound={
-		Start=CreateSound(self.Entity,"ultralight/Trike_Starter.wav"),
+		Start=CreateSound(self.Entity,"WAC/ultralight/start.wav"),
 		Blades=CreateSound(self.Entity,""),
-		Engine=CreateSound(self.Entity,"ultralight/Trike_4.wav"),
+		Engine=CreateSound(self.Entity,"Ultralight.Internal"),
 		MissileAlert=CreateSound(self.Entity,"HelicopterVehicle/MissileNearby.mp3"),
 		MissileShoot=CreateSound(self.Entity,"HelicopterVehicle/MissileShoot.mp3"),
 		MinorAlarm=CreateSound(self.Entity,"HelicopterVehicle/MinorAlarm.mp3"),

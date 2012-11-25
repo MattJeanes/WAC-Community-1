@@ -66,9 +66,9 @@ end
 
 function ENT:AddSounds()
 	self.Sound={
-		Start=CreateSound(self.Entity,"FSX/Jenny/xjenny_startup.wav"),
+		Start=CreateSound(self.Entity,"WAC/jenny/start.wav"),
 		Blades=CreateSound(self.Entity,""),
-		Engine=CreateSound(self.Entity,"FSX/Jenny/xjenny_rpm3.wav"),
+		Engine=CreateSound(self.Entity,"Jenny.Internal"),
 		MissileAlert=CreateSound(self.Entity,"HelicopterVehicle/MissileNearby.mp3"),
 		MissileShoot=CreateSound(self.Entity,"HelicopterVehicle/MissileShoot.mp3"),
 		MinorAlarm=CreateSound(self.Entity,"HelicopterVehicle/MinorAlarm.mp3"),

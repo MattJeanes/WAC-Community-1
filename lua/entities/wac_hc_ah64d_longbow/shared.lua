@@ -63,13 +63,13 @@ end
 
 function ENT:AddSounds()
 	self.Sound={
-		Start=CreateSound(self.Entity,"ah64d/ah64d_start_idle_stop.wav"),
-		Blades=CreateSound(self.Entity,"Apache.External"),
-		Engine=CreateSound(self.Entity,"ah64d/ah64d_cockpit.wav"),
+		Start=CreateSound(self.Entity,"WAC/ah64d/start.wav"),
+		Blades=CreateSound(self.Entity,"AH64D.External"),
+		Engine=CreateSound(self.Entity,"AH64D.Internal"),
 		MissileAlert=CreateSound(self.Entity,"HelicopterVehicle/MissileNearby.mp3"),
-		MissileShoot=CreateSound(self.Entity,"ah64d/rocket_fire.wav"),
-		MinorAlarm=CreateSound(self.Entity,"ah64d/fire_alarm_tank.wav"),
-		LowHealth=CreateSound(self.Entity,"ah64d/fire_alarm.wav"),
-		CrashAlarm=CreateSound(self.Entity,"ah64d/FireSmoke.wav"),
+		MissileShoot=CreateSound(self.Entity,"WAC/ah64d/rocket_fire.wav"),
+		MinorAlarm=CreateSound(self.Entity,"WAC/Heli/fire_alarm_tank.wav"),
+		LowHealth=CreateSound(self.Entity,"WAC/Heli/fire_alarm.wav"),
+		CrashAlarm=CreateSound(self.Entity,"WAC/Heli/FireSmoke.wav"),
 	}
 end
