@@ -2,7 +2,7 @@
 {
 	"name"		"WAC Community 1"
 	"version"	"Git"
-	"up_date"	"24/11/12"
+	"up_date"	"12/12/12"
 	"author_name"	"Dr. Matt & Others"
 	"author_email"	"mattjeanes23@gmail.com"
 	"author_url"	"mattjeanes.com"
