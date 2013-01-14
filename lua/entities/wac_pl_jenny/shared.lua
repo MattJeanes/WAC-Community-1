@@ -12,9 +12,9 @@ ENT.Instructions 		= ""
 ENT.Spawnable			= true
 ENT.AdminSpawnable	= true
 
-ENT.Model			= "models/Curtiss/jenny_jn4.mdl"
+ENT.Model			= "models/curtiss/jenny_jn4.mdl"
 ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
-ENT.RotorModel		= "models/Curtiss/jenny_prop.mdl"
+ENT.RotorModel		= "models/curtiss/jenny_prop.mdl"
 ENT.TopRotorDir        = 1
 ENT.TopRotorPos	= Vector(62, 0, 0)
 ENT.BackRotorPos	= Vector(8, 0, -48)
