@@ -29,7 +29,7 @@ ENT.EngineWeight = {
 
 ENT.WheelInfo={
     {
-        mdl="models/Curtiss/jenny_wheels.mdl",
+        mdl="models/curtiss/jenny_wheels.mdl",
         pos=Vector(8,0,-48),
         friction=1,
         mass=150,
