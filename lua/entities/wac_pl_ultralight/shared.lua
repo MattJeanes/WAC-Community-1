@@ -20,12 +20,8 @@ ENT.TopRotorPos		= Vector(-51,-0.25,50)
 //ENT.BackRotorPos	= Vector(18, 0, 24)
 ENT.EngineForce	= 140
 ENT.Weight		= 445
-ENT.SmokePos		= Vector(-47,-0.25,50)
+ENT.SmokePos	= Vector(-47,-0.25,50)
 ENT.FirePos		= Vector(-47,-0.25,50)
-ENT.EngineWeight = {
-	Weight = 92,
-	Position = Vector(18, 0, 24)
-}
 
 ENT.WheelInfo={
     {

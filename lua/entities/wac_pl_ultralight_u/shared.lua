@@ -15,17 +15,13 @@ ENT.AdminSpawnable	= true
 ENT.Model			= "models/ultralight/ultralight.mdl"
 ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
 ENT.RotorModel		= "models/ultralight/ultralight_propeller2.mdl"
-ENT.TopRotorDir        = 1
-ENT.TopRotorPos	= Vector(-51,-0.25,50)
-ENT.BackRotorPos	= Vector(18, 0, 24)
+ENT.TopRotorDir		= 1
+ENT.TopRotorPos		= Vector(-51,-0.25,50)
+//ENT.BackRotorPos	= Vector(18, 0, 24)
 ENT.EngineForce	= 140
 ENT.Weight		= 445
-ENT.SmokePos		= Vector(-47,-0.25,50)
+ENT.SmokePos	= Vector(-47,-0.25,50)
 ENT.FirePos		= Vector(-47,-0.25,50)
-ENT.EngineWeight = {
-	Weight = 92,
-	Position = Vector(18, 0, 24)
-}
 
 ENT.WheelInfo={
     {
@@ -67,9 +63,9 @@ end
 
 function ENT:AddSounds()
 	self.Sound={
-		Start=CreateSound(self.Entity,"ultralight/Trike_Starter.wav"),
+		Start=CreateSound(self.Entity,"WAC/ultralight/start.wav"),
 		Blades=CreateSound(self.Entity,""),
-		Engine=CreateSound(self.Entity,"ultralight/Trike_4.wav"),
+		Engine=CreateSound(self.Entity,"Ultralight.Internal"),
 		MissileAlert=CreateSound(self.Entity,"HelicopterVehicle/MissileNearby.mp3"),
 		MissileShoot=CreateSound(self.Entity,"HelicopterVehicle/MissileShoot.mp3"),
 		MinorAlarm=CreateSound(self.Entity,"HelicopterVehicle/MinorAlarm.mp3"),
