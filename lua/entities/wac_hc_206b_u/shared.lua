@@ -2,10 +2,10 @@ if not wac then return end
 if SERVER then AddCSLuaFile('shared.lua') end
 ENT.Base 				= "wac_hc_base_u"
 ENT.Type 				= "anim"
-
-ENT.PrintName			= "Bell 206B"
-ENT.Author				= "Dr. Matt"
 ENT.Category			= wac.aircraft.spawnCategoryU
+ENT.PrintName			= "Bell 206B"
+ENT.Author				= "SentryGunMan, Dr. Matt"
+
 ENT.Spawnable			= true
 ENT.AdminSpawnable		= true
 
@@ -29,7 +29,6 @@ if CLIENT then
 		distance = 400
 	}
 end
-
 function ENT:AddSeatTable()
     return{
         [1]={
@@ -45,19 +44,22 @@ function ENT:AddSeatTable()
             wep={wac.aircraft.getWeapon("No Weapon")},
         },
         [3]={
-            Pos=Vector(-30, 15, 38),
+            Pos=Vector(-30, 15, 40),
+	    Ang=Angle(-30,0,0),
             ExitPos=Vector(-25,80,10),
             NoHud=true,
             wep={wac.aircraft.getWeapon("No Weapon")},
         },
         [4]={
-            Pos=Vector(-30, 2, 38),
+            Pos=Vector(-30, 2, 40),
+	    Ang=Angle(-90,0,0),
             ExitPos=Vector(-25,80,10),
             NoHud=true,
             wep={wac.aircraft.getWeapon("No Weapon")},
         },
 	[5]={
-            Pos=Vector(-30, -10, 38),
+            Pos=Vector(-30, -10, 40),
+	    Ang=Angle(-30,0,0),
             ExitPos=Vector(-25,-80,10),
             NoHud=true,
             wep={wac.aircraft.getWeapon("No Weapon")},
@@ -88,3 +90,7 @@ function ENT:SpawnFunction(ply, tr)
 	self.Sounds=table.Copy(sndt)
 	return ent
 end
+
+
+function ENT:DrawPilotHud() end
+function ENT:DrawWeaponSelection() end
