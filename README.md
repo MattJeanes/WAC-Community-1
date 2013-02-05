@@ -12,9 +12,10 @@ Aircraft
 ===============
 In this pack you will find:
 
-• Aircreation 582SL
-• Bell 206B
-• Boeing AH-64D Longbow
-• CH-46 Sea Knight
-• CH-47 Chinook
-• Curtiss JN-4 Jenny
+ï¿½ Aircreation 582SL
+ï¿½ Bell 206B
+ï¿½ Bell 206B Amphibian
+ï¿½ Boeing AH-64D Longbow
+ï¿½ CH-46 Sea Knight
+ï¿½ CH-47 Chinook
+ï¿½ Curtiss JN-4 Jenny
