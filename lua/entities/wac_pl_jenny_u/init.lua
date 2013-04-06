@@ -17,14 +17,14 @@ end
 
 ENT.Aerodynamics = {
 	Rotation = {
-		Front = Vector(0, 9, 0),
-		Right = Vector(0, 0, 70), -- Rotate towards flying direction
-		Top = Vector(0, -50, 0)
+		Front = Vector(0, -0.25, 0),
+		Right = Vector(0, 0, 60), -- Rotate towards flying direction
+		Top = Vector(0, -40, 0)
 	},
 	Lift = {
-		Front = Vector(0, 0, 145), -- Go up when flying forward
+		Front = Vector(0, 0, 50.5), -- Go up when flying forward
 		Right = Vector(0, 0, 0),
 		Top = Vector(0, 0, -0.5)
 	},
-	Rail = Vector(1, 8, 30)
+	Rail = Vector(3, 5, 20)
 }

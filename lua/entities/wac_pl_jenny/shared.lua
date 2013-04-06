@@ -18,15 +18,10 @@ ENT.RotorModel		= "models/curtiss/jenny_prop.mdl"
 ENT.TopRotorDir        = 1
 ENT.TopRotorPos	= Vector(62, 0, 0)
 ENT.BackRotorPos	= Vector(8, 0, -48)
-ENT.EngineForce	= 80
+ENT.EngineForce	= 240
 ENT.Weight		= 761
 ENT.SmokePos		= Vector(47, 0, 0)
 ENT.FirePos		= Vector(47, 0, 0)
-ENT.EngineWeight = {
-	Weight = 117,
-	Position = ENT.TopRotorPos
-}
-
 ENT.WheelInfo={
     {
         mdl="models/Curtiss/jenny_wheels.mdl",
