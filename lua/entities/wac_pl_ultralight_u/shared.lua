@@ -18,7 +18,7 @@ ENT.RotorModel		= "models/ultralight/ultralight_propeller2.mdl"
 ENT.TopRotorDir		= 1
 ENT.TopRotorPos		= Vector(-51,-0.25,50)
 //ENT.BackRotorPos	= Vector(18, 0, 24)
-ENT.EngineForce	= 140
+ENT.EngineForce	= 100
 ENT.Weight		= 445
 ENT.SmokePos	= Vector(-47,-0.25,50)
 ENT.FirePos		= Vector(-47,-0.25,50)
@@ -27,20 +27,20 @@ ENT.WheelInfo={
     {
         mdl="models/BF2/helicopters/Mil Mi-28/mi28_w2.mdl",
         pos=Vector(-27.5,37.5,8),
-        friction=1,
-        mass=30,
+        friction=0,
+        mass=130,
     },
     {
         mdl="models/BF2/helicopters/Mil Mi-28/mi28_w2.mdl",
         pos=Vector(-27.5,-37.5,8),
-        friction=1,
-        mass=30,
+        friction=0,
+        mass=130,
     },
     {
         mdl="models/BF2/helicopters/Mil Mi-28/mi28_w2.mdl",
         pos=Vector(49,0,10),
-        friction=1,
-        mass=30,
+        friction=0,
+        mass=170,
     },
 }
 
@@ -48,13 +48,13 @@ function ENT:AddSeatTable()
     return{
         [1]={
 	    Pos=Vector(18, 0, 24),
-            ExitPos=Vector(18,40,5),
+            ExitPos=Vector(18,70,5),
 	    NoHud=true,
             wep={wac.aircraft.getWeapon("No Weapon")},
         },
         [2]={
             Pos=Vector(-3, 0, 33),
-            ExitPos=Vector(-3,-40,5),
+            ExitPos=Vector(-3,-70,5),
             NoHud=true,
             wep={wac.aircraft.getWeapon("No Weapon")},
         },
