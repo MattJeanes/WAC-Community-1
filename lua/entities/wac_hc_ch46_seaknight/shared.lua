@@ -12,6 +12,7 @@ ENT.Purpose 			= ""
 ENT.Instructions 		= ""
 ENT.Spawnable			= true
 ENT.AdminSpawnable	= true
+ENT.AutomaticFrameAdvance = true // needed for ramp anims
 
 ENT.Model			= "models/flyboi/ch46/ch46_fb.mdl"
 ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
@@ -115,4 +116,23 @@ function ENT:SpawnFunction(ply, tr)
 	ent:Activate()
 	self.Sounds=table.Copy(sndt)
 	return ent
+end
+
+if SERVER then
+	function ENT:CustomPhysicsUpdate(ph)
+	
+		local idleo=self:LookupSequence("idle_o")
+		local idlec=self:LookupSequence("idle")
+		local phys=self:GetPhysicsObject()
+		
+		if IsValid(phys) and not self.disabled then
+			if self.rotorRpm>0.8 and phys:GetVelocity():Length() > 750 and self:GetSequence() != idlec then
+				self:ResetSequence(idlec)
+				self:SetPlaybackRate(1.0)
+			elseif phys:GetVelocity():Length() < 750 and self:GetSequence() != idleo then
+				self:ResetSequence(idleo)
+				self:SetPlaybackRate(1.0)
+			end
+		end
+	end
 end

@@ -13,6 +13,7 @@ ENT.Purpose 			= ""
 ENT.Instructions 		= ""
 ENT.Spawnable			= true
 ENT.AdminSpawnable		= true
+ENT.AutomaticFrameAdvance = true // needed for gear anims
 
 ENT.Model			= "models/wac/ch47b.mdl"
 ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
