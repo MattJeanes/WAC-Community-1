@@ -35,77 +35,57 @@ end
 
 ENT.TwinBladed = true
 
-function ENT:AddSeatTable()
-    return{
-        [1]={
-            Pos=Vector(165, -22, 68),
-            ExitPos=Vector(160,-70,40),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [2]={
-            Pos=Vector(165, 22, 68),
-            ExitPos=Vector(160,70,40),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [3]={
-            Pos=Vector(25, 28, 49),
-            ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,-90,0),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [4]={
-            Pos=Vector(-20, -28, 49),
-            ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,90,0),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [5]={
-            Pos=Vector(-60, -28, 49.5),
-            ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,90,0),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [6]={
-            Pos=Vector(-70, 28, 49.5),
-            ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,-90,0),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [7]={
-            Pos=Vector(-100, -28, 50),
-            ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,90,0),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-        [8]={
-            Pos=Vector(-100, 28, 50),
-            ExitPos=Vector(-320,0,10),
-            Ang=Angle(0,-90,0),
-            NoHud=true,
-            wep={wac.aircraft.getWeapon("No Weapon")},
-        },
-    }
-end
+ENT.Seats = {
+	{
+		pos=Vector(165, -22, 68),
+		exit=Vector(160,-70,40),
+	},
+	{
+		pos=Vector(165, 22, 68),
+		exit=Vector(160,70,40),
+	},
+	{
+		pos=Vector(25, 28, 49),
+		exit=Vector(-320,0,10),
+		ang=Angle(0,-90,0),
+	},
+	{
+		pos=Vector(-20, -28, 49),
+		exit=Vector(-320,0,10),
+		ang=Angle(0,90,0),
+	},
+	{
+		pos=Vector(-60, -28, 49.5),
+		exit=Vector(-320,0,10),
+		ang=Angle(0,90,0),
+	},
+	{
+		pos=Vector(-70, 28, 49.5),
+		exit=Vector(-320,0,10),
+		ang=Angle(0,-90,0),
+	},
+	{
+		pos=Vector(-100, -28, 50),
+		exit=Vector(-320,0,10),
+		ang=Angle(0,90,0),
+	},
+	{
+		pos=Vector(-100, 28, 50),
+		exit=Vector(-320,0,10),
+		ang=Angle(0,-90,0),
+	},
+}
 
-function ENT:AddSounds()
-	self.Sound={
-		Start=CreateSound(self.Entity,"WAC/ch46/start.wav"),
-		Blades=CreateSound(self.Entity,"CH46.External"),
-		Engine=CreateSound(self.Entity,"CH46.Internal"),
-		MissileAlert=CreateSound(self.Entity,"HelicopterVehicle/MissileNearby.mp3"),
-		MissileShoot=CreateSound(self.Entity,"HelicopterVehicle/MissileShoot.mp3"),
-		MinorAlarm=CreateSound(self.Entity,"HelicopterVehicle/MinorAlarm.mp3"),
-		LowHealth=CreateSound(self.Entity,"HelicopterVehicle/LowHealth.mp3"),
-		CrashAlarm=CreateSound(self.Entity,"HelicopterVehicle/CrashAlarm.mp3"),
-	}
-end
+ENT.Sounds={
+	Start="WAC/ch46/start.wav",
+	Blades="WAC/ch46/external.wav",
+	Engine="WAC/ch46/internal.wav",
+	MissileAlert="HelicopterVehicle/MissileNearby.mp3",
+	MissileShoot="HelicopterVehicle/MissileShoot.mp3",
+	MinorAlarm="HelicopterVehicle/MinorAlarm.mp3",
+	LowHealth="HelicopterVehicle/LowHealth.mp3",
+	CrashAlarm="HelicopterVehicle/CrashAlarm.mp3",
+}
 
 function ENT:SpawnFunction(ply, tr)
 	if (!tr.Hit) then return end
@@ -114,13 +94,13 @@ function ENT:SpawnFunction(ply, tr)
 	ent.Owner=ply
 	ent:Spawn()
 	ent:Activate()
-	self.Sounds=table.Copy(sndt)
 	return ent
 end
 
 if SERVER then
-	function ENT:CustomPhysicsUpdate(ph)
-	
+	function ENT:PhysicsUpdate(ph)
+		self:base("wac_hc_base").PhysicsUpdate(self,ph)
+		
 		local idleo=self:LookupSequence("idle_o")
 		local idlec=self:LookupSequence("idle")
 		local phys=self:GetPhysicsObject()
@@ -136,3 +116,5 @@ if SERVER then
 		end
 	end
 end
+
+function ENT:DrawWeaponSelection() end
