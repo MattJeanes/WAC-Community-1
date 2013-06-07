@@ -6,7 +6,8 @@ AddCSLuaFile("shared.lua")
 function ENT:SpawnFunction(ply, tr)
 	if (!tr.Hit) then return end
 	local ent=ents.Create(ClassName)
-	ent:SetPos(tr.HitPos+tr.HitNormal*65)
+	ent:SetPos(tr.HitPos+tr.HitNormal*60)
+	ent:SetAngles(Angle(-10,0,0))
 	ent:Spawn()
 	ent:Activate()
 	ent:SetSkin(math.random(0,3))
@@ -16,7 +17,7 @@ end
 
 ENT.Aerodynamics = {
 	Rotation = {
-		Front = Vector(0, -0.25, 0),
+		Front = Vector(0, -10.5, 0),
 		Right = Vector(0, 0, 60), -- Rotate towards flying direction
 		Top = Vector(0, -40, 0)
 	},

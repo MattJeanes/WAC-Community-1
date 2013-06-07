@@ -32,6 +32,9 @@ ENT.Wheels = {
     },
 }
 
+ENT.Agility = {
+	Thrust = 10
+}
 
 ENT.Seats = {
 	{
