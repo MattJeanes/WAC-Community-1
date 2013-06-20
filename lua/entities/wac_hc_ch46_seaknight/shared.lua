@@ -3,39 +3,41 @@ AddCSLuaFile()
 
 ENT.Base 				= "wac_hc_base"
 ENT.Type 				= "anim"
-
 ENT.PrintName			= "CH-46 Sea Knight"
 ENT.Author				= "}{ornet/Vest"
 ENT.Category			= wac.aircraft.spawnCategory
-ENT.Contact    			= ""
-ENT.Purpose 			= ""
-ENT.Instructions 		= ""
 ENT.Spawnable			= true
 ENT.AdminSpawnable	= true
 ENT.AutomaticFrameAdvance = true // needed for ramp anims
-ENT.UsePhysRotor2	= true
 
 ENT.Model			= "models/flyboi/ch46/ch46_fb.mdl"
-ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
-ENT.RotorModel		= "models/flyboi/ch46/ch46rotorm_fb.mdl"
-ENT.RotorModel2		= "models/flyboi/ch46/ch46rotorm_fb.mdl"
-ENT.BackRotorModel	= "models/props_junk/PopCan01a.mdl"
-ENT.TopRotorDir        = -1
-ENT.TopRotorDir2        = 1
-ENT.BackRotorDir	= -1
-ENT.TopRotorPos	= Vector(149.6,0,170)
-ENT.TopRotorPos2	= Vector(-263,0,203)
-ENT.BackRotorPos	= Vector(0,0,38)
 ENT.EngineForce	= 36
 ENT.Weight		= 11000
 ENT.SmokePos		= Vector(-230,0,115)
 ENT.FirePos		= Vector(-263,0,203)
 
-if CLIENT then
-	ENT.thirdPerson = {
-		distance = 680
-	}
-end
+ENT.TopRotor = {
+	dir = -1,
+	pos = Vector(149.6,0,170),
+	model = "models/flyboi/ch46/ch46rotorm_fb.mdl"
+}
+
+ENT.TopRotor2 = {
+	dir = 1,
+	pos = Vector(-263,0,203),
+	angles = Angle(0,0,0),
+	model = "models/flyboi/ch46/ch46rotorm_fb.mdl"
+}
+
+ENT.BackRotor = {
+	dir = 1,
+	pos = Vector(0,0,38),
+	model = "models/props_junk/PopCan01a.mdl"
+}
+
+ENT.thirdPerson = {
+	distance = 680
+}
 
 ENT.Seats = {
 	{
@@ -102,39 +104,37 @@ end
 if SERVER then
 	function ENT:addRotors()
 		self:base("wac_hc_base").addRotors(self)
-		if self.UsePhysRotor2 then
-			self.TopRotor2 = self:addEntity("prop_physics")
-			self.TopRotor2:SetModel("models/props_junk/sawblade001a.mdl")
-			self.TopRotor2:SetPos(self:LocalToWorld(self.TopRotorPos2))
-			self.TopRotor2:SetAngles(self:GetAngles())
-			self.TopRotor2:SetOwner(self.Owner)
-			self.TopRotor2:SetNotSolid(true)
-			self.TopRotor2:Spawn()
-			self.TopRotor2.Phys = self.TopRotor2:GetPhysicsObject()
-			self.TopRotor2.Phys:EnableGravity(false)
-			self.TopRotor2.Phys:SetMass(5)
-			self.TopRotor2.Phys:EnableDrag(false)
-			self.TopRotor2:SetNoDraw(true)
-			self.TopRotor2.fHealth = 100
-			self.TopRotor2.wac_ignore = true
-			if self.RotorModel2 then
-				local e = self:addEntity("wac_hitdetector")
-				self:SetNWEntity("wac_air_rotor_secondary", e)
-				e:SetModel(self.RotorModel2)
-				e:SetPos(self:LocalToWorld(self.TopRotorPos2))
-				e:SetAngles(self:GetAngles())
-				e:Spawn()
-				e:SetNotSolid(true)
-				e:SetParent(self.TopRotor2)
-				e.wac_ignore = true
-				local obb=e:OBBMaxs()
-				self.RotorWidth2=(obb.x>obb.y and obb.x or obb.y)
-				self.RotorHeight2=obb.z
-				self.TopRotorModel2=e
-			end
-			constraint.Axis(self.Entity, self.TopRotor2, 0, 0, self.TopRotorPos2, Vector(0,0,1),0,0,0,1)
-			self:AddOnRemove(self.TopRotor2)
+		self.topRotor2 = self:addEntity("prop_physics")
+		self.topRotor2:SetModel("models/props_junk/sawblade001a.mdl")
+		self.topRotor2:SetPos(self:LocalToWorld(self.TopRotor2.pos))
+		self.topRotor2:SetAngles(self:LocalToWorldAngles(self.TopRotor2.angles))
+		self.topRotor2:SetOwner(self.Owner)
+		self.topRotor2:SetNotSolid(true)
+		self.topRotor2:Spawn()
+		self.topRotor2.Phys = self.topRotor2:GetPhysicsObject()
+		self.topRotor2.Phys:EnableGravity(false)
+		self.topRotor2.Phys:SetMass(5)
+		self.topRotor2.Phys:EnableDrag(false)
+		self.topRotor2:SetNoDraw(true)
+		self.topRotor2.fHealth = 100
+		self.topRotor2.wac_ignore = true
+		if self.TopRotor2.model then
+			local e = self:addEntity("wac_hitdetector")
+			self:SetNWEntity("wac_air_rotor_main", e)
+			e:SetModel(self.TopRotor2.model)
+			e:SetPos(self.topRotor2:GetPos())
+			e:SetAngles(self.topRotor2:GetAngles())
+			e:Spawn()
+			e:SetNotSolid(true)
+			e:SetParent(self.topRotor2)
+			e.wac_ignore = true
+			local obb = e:OBBMaxs()
+			self.RotorWidth2 = (obb.x>obb.y and obb.x or obb.y)
+			self.RotorHeight2 = obb.z
+			self.topRotor2.vis = e
 		end
+		constraint.Axis(self.Entity, self.topRotor2, 0, 0, self.TopRotor2.pos, Vector(0,0,1), 0,0,0,1)
+		self:AddOnRemove(self.topRotor2)
 	end
 
 	function ENT:PhysicsUpdate(ph)
@@ -163,25 +163,21 @@ if SERVER then
 
 		--local phm = (wac.aircraft.cvars.doubleTick:GetBool() and 2 or 1)
 		local phm = FrameTime()*66
-		if self.UsePhysRotor2 then
-			if self.TopRotor2 and self.TopRotor2.Phys and self.TopRotor2.Phys:IsValid() then
-				-- top rotor 2 physics
-				local rotor = {}
-				rotor.phys = self.TopRotor2.Phys
-				rotor.angVel = rotor.phys:GetAngleVelocity()
-				rotor.upvel = self.TopRotor2:WorldToLocal(self.TopRotor2:GetVelocity()+self.TopRotor2:GetPos()).z
-				rotor.brake =
-					math.Clamp(math.abs(rotor.angVel.z) - 2950, 0, 100)/10 -- RPM cap
-					+ math.pow(math.Clamp(1500 - math.abs(rotor.angVel.z), 0, 1500)/900, 3)
-					+ math.abs(rotor.angVel.z/10000)
-					- (rotor.upvel - self.rotorRpm)*self.controls.throttle/1000
-
-				rotor.targetAngVel =
-					Vector(0, 0, math.pow(self.engineRpm,2)*self.TopRotorDir2*10)
-					- rotor.angVel*rotor.brake/200
-
-				rotor.phys:AddAngleVelocity(rotor.targetAngVel)
-			end
+		if self.TopRotor2 and self.topRotor2.Phys and self.topRotor2.Phys:IsValid() then
+			-- top rotor 2 physics
+			local rotor = {}
+			rotor.phys = self.topRotor2.Phys
+			rotor.angVel = rotor.phys:GetAngleVelocity()
+			rotor.upvel = self.topRotor2:WorldToLocal(self.topRotor2:GetVelocity()+self.topRotor2:GetPos()).z
+			rotor.brake =
+				math.Clamp(math.abs(rotor.angVel.z) - 2950, 0, 100)/10 -- RPM cap
+				+ math.pow(math.Clamp(1500 - math.abs(rotor.angVel.z), 0, 1500)/900, 3)
+				+ math.abs(rotor.angVel.z/10000)
+				- (rotor.upvel - self.rotorRpm)*self.controls.throttle/1000
+			rotor.targetAngVel =
+				Vector(0, 0, math.pow(self.engineRpm,2)*self.TopRotor2.dir*10)
+				- rotor.angVel*rotor.brake/200
+			rotor.phys:AddAngleVelocity(rotor.targetAngVel)
 		end
 		
 		local idleo=self:LookupSequence("idle_o")

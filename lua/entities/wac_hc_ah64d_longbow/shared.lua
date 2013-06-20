@@ -2,27 +2,27 @@ if not wac then return end
 
 ENT.Base 			= "wac_hc_base"
 ENT.Type 			= "anim"
-
 ENT.PrintName		= "Boeing AH-64D Longbow"
-ENT.Author			= "WeltEnSTurm"
+ENT.Author			= "Hornetnest"
 ENT.Category		= wac.aircraft.spawnCategory
-ENT.Contact    		= ""
-ENT.Purpose 		= ""
-ENT.Instructions 	= ""
-ENT.Model			= "Models/sentry/apache.mdl"
-ENT.RotorPhModel	= "models/props_junk/sawblade001a.mdl"
-ENT.RotorModel		= "Models/sentry/apachemain.mdl"
-ENT.BackRotorModel	= "Models/sentry/apacherear.mdl"
-
 ENT.Spawnable		= true
 ENT.AdminSpawnable	= true
 
-ENT.TopRotorPos		= Vector(37,0,80)
-ENT.TopRotorDir		= -1
-ENT.BackRotorPos	= Vector(-332.5,-17,93.5)
-ENT.BackRotorDir	= -1
+ENT.Model			= "models/sentry/apache.mdl"
 ENT.SmokePos		= Vector(37,0,75)
 ENT.FirePos			= Vector(37,0,75)
+
+ENT.TopRotor = {
+	dir = -1,
+	pos = Vector(37,0,80),
+	model = "models/sentry/apachemain.mdl"
+}
+
+ENT.BackRotor = {
+	dir = -1,
+	pos = Vector(-332.5,-17,93.5),
+	model = "models/sentry/apacherear.mdl"
+}
 
 ENT.Seats={
 	{
