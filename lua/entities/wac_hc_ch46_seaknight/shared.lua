@@ -138,8 +138,8 @@ if SERVER then
 	end
 
 	function ENT:PhysicsUpdate(ph)
-		self:base("wac_hc_base").PhysicsUpdate(self,ph)
-		
+		self:base("wac_hc_base").PhysicsUpdate(self,ph)		
+			
 		local vel = ph:GetVelocity()	
 		local pos = self:GetPos()
 		local ri = self:GetRight()
@@ -149,50 +149,41 @@ if SERVER then
 		local dvel = vel:Length()
 		local lvel = self:WorldToLocal(pos+vel)
 
-		local realism = 2
-		local pilot = self.Passenger[1]
-		if IsValid(pilot) then
-			realism = math.Clamp(tonumber(pilot:GetInfo("wac_cl_air_realism")), 1, 3)
-		end
+		local pilot = self.passengers[1]
 
-		local t = self:calcHover(ph,pos,vel,ang)
-
-		local rotateX = (self.controls.roll*1.5+t.r)*self.rotorRpm
-		local rotateY = (self.controls.pitch+t.p)*self.rotorRpm
+		local hover = self:calcHover(ph,pos,vel,ang)
+		
+		local rotateX = (self.controls.roll*1.5+hover.r)*self.rotorRpm
+		local rotateY = (self.controls.pitch+hover.p)*self.rotorRpm
 		local rotateZ = self.controls.yaw*1.5*self.rotorRpm
-
+		
 		--local phm = (wac.aircraft.cvars.doubleTick:GetBool() and 2 or 1)
 		local phm = FrameTime()*66
-		if self.TopRotor2 and self.topRotor2.Phys and self.topRotor2.Phys:IsValid() then
-			-- top rotor 2 physics
-			local rotor = {}
-			rotor.phys = self.topRotor2.Phys
-			rotor.angVel = rotor.phys:GetAngleVelocity()
-			rotor.upvel = self.topRotor2:WorldToLocal(self.topRotor2:GetVelocity()+self.topRotor2:GetPos()).z
-			rotor.brake =
-				math.Clamp(math.abs(rotor.angVel.z) - 2950, 0, 100)/10 -- RPM cap
-				+ math.pow(math.Clamp(1500 - math.abs(rotor.angVel.z), 0, 1500)/900, 3)
-				+ math.abs(rotor.angVel.z/10000)
-				- (rotor.upvel - self.rotorRpm)*self.controls.throttle/1000
-			rotor.targetAngVel =
-				Vector(0, 0, math.pow(self.engineRpm,2)*self.TopRotor2.dir*10)
-				- rotor.angVel*rotor.brake/200
-			rotor.phys:AddAngleVelocity(rotor.targetAngVel)
-		end
-		
-		local idleo=self:LookupSequence("idle_o")
-		local idlec=self:LookupSequence("idle")
-		local phys=self:GetPhysicsObject()
-			
-		if IsValid(phys) and not self.disabled then
-			if self.rotorRpm>0.8 and phys:GetVelocity():Length() > 750 and self:GetSequence() != idlec then
-				self:ResetSequence(idlec)
-				self:SetPlaybackRate(1.0)
-			elseif phys:GetVelocity():Length() < 750 and self:GetSequence() != idleo then
-				self:ResetSequence(idleo)
-				self:SetPlaybackRate(1.0)
+		if self.UsePhysRotor then
+			if self.topRotor2 and self.topRotor2.Phys and self.topRotor2.Phys:IsValid() then
+				if self.RotorBlurModel then
+					self.topRotor2.vis:SetColor(Color(255,255,255,math.Clamp(1.3-self.rotorRpm,0.1,1)*255))
+				end
+
+				-- top rotor physics
+				local rotor = {}
+				rotor.phys = self.topRotor2.Phys
+				rotor.angVel = rotor.phys:GetAngleVelocity()
+				rotor.upvel = self.topRotor2:WorldToLocal(self.topRotor2:GetVelocity()+self.topRotor2:GetPos()).z
+				rotor.brake =
+					math.Clamp(math.abs(rotor.angVel.z) - 2950, 0, 100)/10 -- RPM cap
+					+ math.pow(math.Clamp(1500 - math.abs(rotor.angVel.z), 0, 1500)/900, 3)
+					+ math.abs(rotor.angVel.z/10000)
+					- (rotor.upvel - self.rotorRpm)*self.controls.throttle/1000
+
+				rotor.targetAngVel =
+					Vector(0, 0, math.pow(self.engineRpm,2)*self.TopRotor2.dir*10)
+					- rotor.angVel*rotor.brake/200
+
+				rotor.phys:AddAngleVelocity(rotor.targetAngVel)
 			end
 		end
+		self.LastPhys = CurTime()
 	end
 end
 
