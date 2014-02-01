@@ -5,7 +5,7 @@ ENT.Type 				= "anim"
 
 ENT.PrintName			= "Aircreation 582SL"
 ENT.Author				= "}{ornet/Vest,Nikke"
-ENT.Category			= wac.aircraft.spawnCategory
+ENT.Category			= wac.aircraft.spawnCategoryC
 ENT.Contact    			= ""
 ENT.Purpose 			= ""
 ENT.Instructions 		= ""

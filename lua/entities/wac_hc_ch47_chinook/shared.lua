@@ -5,7 +5,7 @@ ENT.Base 				= "wac_hc_base"
 ENT.Type 				= "anim"
 ENT.PrintName			= "CH-47 Chinook"
 ENT.Author				= "}{ornet/Vest,SentrySappinMySpy,Reality Mod"
-ENT.Category			= wac.aircraft.spawnCategory
+ENT.Category			= wac.aircraft.spawnCategoryC
 ENT.Spawnable			= true
 ENT.AdminSpawnable		= true
 

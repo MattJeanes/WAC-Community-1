@@ -4,7 +4,7 @@ ENT.Base 			= "wac_hc_base"
 ENT.Type 			= "anim"
 ENT.PrintName		= "Boeing AH-64D Longbow"
 ENT.Author			= "Hornetnest"
-ENT.Category		= wac.aircraft.spawnCategory
+ENT.Category		= wac.aircraft.spawnCategoryC
 ENT.Spawnable		= true
 ENT.AdminSpawnable	= true
 

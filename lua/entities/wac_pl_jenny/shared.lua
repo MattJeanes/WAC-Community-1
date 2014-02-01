@@ -4,7 +4,7 @@ ENT.Base 				= "wac_pl_base"
 ENT.Type 				= "anim"
 ENT.PrintName			= "Curtiss JN-4 Jenny"
 ENT.Author				= "}{ornet/Vest"
-ENT.Category			= wac.aircraft.spawnCategory
+ENT.Category			= wac.aircraft.spawnCategoryC
 ENT.Spawnable			= true
 ENT.AdminSpawnable	= true
 
