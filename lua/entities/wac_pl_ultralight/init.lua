@@ -14,20 +14,21 @@ end
 
 ENT.Aerodynamics = {
 	Rotation = {
-		Front = Vector(0, -5, 0),
-		Right = Vector(0, 0, 60), -- Rotate towards flying direction
-		Top = Vector(0, -40, 0)
+		Front = Vector(0, 0, 0),
+		Right = Vector(10, 10, 30), -- Rotate towards flying direction
+		Top = Vector(0, -50, 0)
 	},
 	Lift = {
-		Front = Vector(0, 0, 60), -- Go up when flying forward
+		Front = Vector(-30, 0, 290), -- Go up when flying forward
 		Right = Vector(0, 0, 0),
-		Top = Vector(0, 0, -0.5)
+		Top = Vector(0, 0, -1.5)
 	},
-	Rail = Vector(3, 5, 20),
-	Drag = {
-		Directional = Vector(0.01, 0.01, 0.01),
-		Angular = Vector(0.01, 0.01, 0.01)
-	}
+	Rail = Vector(1, 15, 100),
+	AngleDrag = Vector(0.01, 0.01, 0.01),
+}
+
+ENT.Agility = {
+	Thrust = 2.5
 }
 
 function ENT:AddRotor()

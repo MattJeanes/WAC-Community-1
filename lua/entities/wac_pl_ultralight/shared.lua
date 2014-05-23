@@ -18,8 +18,8 @@ ENT.RotorModel		= "models/ultralight/ultralight_propeller2.mdl"
 ENT.TopRotorDir		= 1
 ENT.rotorPos		= Vector(-51,-0.25,50)
 ENT.BackRotorPos	= Vector(18, 0, 24)
-ENT.EngineForce	= 240
-ENT.Weight		= 1500
+ENT.EngineForce	= 5
+ENT.Weight		= 445
 ENT.SmokePos	= Vector(-47,-0.25,50)
 ENT.FirePos		= Vector(-47,-0.25,50)
 
@@ -43,10 +43,6 @@ ENT.Wheels={
         friction=0,
         mass=170,
     },
-}
-
-ENT.Agility = {
-	Thrust = 10
 }
 
 ENT.Seats = {

@@ -17,19 +17,19 @@ end
 
 ENT.Aerodynamics = {
 	Rotation = {
-		Front = Vector(0, -3.5, 0),
-		Right = Vector(0, 0, 60), -- Rotate towards flying direction
-		Top = Vector(0, -40, 0)
+		Front = Vector(0, -0.5, 0), -- Trim (XYZ)
+		Right = Vector(0, 0, 30), -- Rotate towards flying direction
+		Top = Vector(30, -20, 0) -- Control Sensitivity
 	},
 	Lift = {
-		Front = Vector(0, 0, 50.5), -- Go up when flying forward
+		Front = Vector(-28, 0, 230), -- Go up when flying forward
 		Right = Vector(0, 0, 0),
 		Top = Vector(0, 0, -0.5)
 	},
-	Rail = Vector(3, 5, 20),
+	Rail = Vector(1, 70, 100),
 	Drag = {
 		Directional = Vector(0.01, 0.01, 0.01),
-		Angular = Vector(0.01, 0.01, 0.01)
+		Angular = Vector(30, -20, 10)
 	}
 }
 
