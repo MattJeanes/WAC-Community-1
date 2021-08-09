@@ -4,7 +4,7 @@ AddCSLuaFile()
 ENT.Base 				= "wac_hc_base"
 ENT.Type 				= "anim"
 ENT.PrintName			= "CH-47 Chinook"
-ENT.Author				= "}{ornet/Vest,SentrySappinMySpy,Reality Mod"
+ENT.Author				= "}{ornet/Vest,SentrySappinMySpy,Reality Mod,Cap,Pingas"
 ENT.Category			= wac.aircraft.spawnCategoryC
 ENT.Spawnable			= true
 ENT.AdminSpawnable		= true
@@ -30,7 +30,7 @@ ENT.TopRotor2 = {
 
 ENT.BackRotor = {
 	dir = 1,
-	pos = Vector(0,0,43),
+	pos = Vector(-246,0,235),
 	model = "models/props_junk/PopCan01a.mdl"
 }
 
@@ -135,9 +135,9 @@ ENT.Sounds={
 }
 
 function ENT:SpawnFunction(ply, tr)
-	if (!tr.Hit) then return end
+	if (not tr.Hit) then return end
 	local ent=ents.Create(ClassName)
-	ent:SetPos(tr.HitPos+tr.HitNormal*2)
+	ent:SetPos(tr.HitPos+tr.HitNormal*20)
 	ent.Owner=ply
 	ent:Spawn()
 	ent:Activate()

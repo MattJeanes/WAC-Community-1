@@ -30,7 +30,7 @@ ENT.Weight				= 8000
 ENT.MaxEnterDistance	= 100
 
 function ENT:SpawnFunction(p, tr)
-	if (!tr.Hit) then return end
+	if (not tr.Hit) then return end
 	local ent=ents.Create(ClassName)
 	ent:SetPos(tr.HitPos+Vector(0,0,75))
 	ent:SetSkin(math.random(0,1))
